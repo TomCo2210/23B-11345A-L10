@@ -24,8 +24,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        login();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null)
+            login();
+        else
+            moveToMainActivity(user);
     }
 
     private void login() {
@@ -60,10 +63,7 @@ public class LoginActivity extends AppCompatActivity {
             // Successfully signed in
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             // ...
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("username", user.getDisplayName());
-            startActivity(intent);
-            finish();
+            moveToMainActivity(user);
         } else {
             // Sign in failed. If response is null the user canceled the
             // sign-in flow using the back button. Otherwise check
@@ -71,5 +71,12 @@ public class LoginActivity extends AppCompatActivity {
             // ...
             Toast.makeText(this,"Unsuccessful Login!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void moveToMainActivity(FirebaseUser user) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("username", user.getDisplayName());
+        startActivity(intent);
+        finish();
     }
 }

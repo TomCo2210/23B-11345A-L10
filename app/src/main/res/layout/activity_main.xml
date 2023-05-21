@@ -9,7 +9,7 @@
     android:orientation="vertical">
 
     <com.google.android.material.textview.MaterialTextView
-
+        android:layout_margin="10dp"
         android:id="@+id/main_LBL_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,15 +21,56 @@
         />
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:layout_margin="10dp"
         android:id="@+id/main_ET_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.button.MaterialButton
+        android:layout_margin="10dp"
         android:id="@+id/main_BTN_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Update Title"
         />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_margin="10dp"
+        android:id="@+id/main_BTN_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Vehicle"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_margin="10dp"
+        android:id="@+id/main_BTN_updatePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Price"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_margin="10dp"
+        android:id="@+id/main_BTN_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Vehicle"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_margin="10dp"
+        android:id="@+id/main_ET_newPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_margin="10dp"
+        android:id="@+id/main_LBL_vehicle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
